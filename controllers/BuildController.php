@@ -25,7 +25,7 @@ class BuildController extends Controller
             $v->saveToDb();
         }
 
-        \Yii::$app->session->addFlash('message', 'Документация обновлена');
+        \Yii::$app->session->addFlash('message', 'Documentation updated');
 
         return $this->redirect(\Yii::$app->request->referrer);
     }
