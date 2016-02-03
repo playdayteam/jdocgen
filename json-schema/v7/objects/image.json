@@ -1,0 +1,48 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "image",
+    "type": "object",
+    "properties": {
+        "name": {
+            "description": "Название картинки",
+            "type": "string"
+        },
+        "width": {
+            "description": "Ширина",
+            "type": [
+                "null",
+                "number"
+            ]
+        },
+        "height": {
+            "description": "Высота",
+            "type": [
+                "null",
+                "number"
+            ]
+        },
+        "banned": {
+            "description": "Картинка забанена",
+            "type": "boolean"
+        },
+        "base_color": {
+            "description": "Базовый цвет",
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "hash": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "name",
+        "width",
+        "height",
+        "banned",
+        "base_color",
+        "hash"
+    ],
+    "additionalProperties": false
+}

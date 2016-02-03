@@ -1,0 +1,122 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "profile",
+    "type": "object",
+    "properties": {
+        "id": {
+            "description": "ID",
+            "type": "number"
+        },
+        "user_id": {
+            "description": "ID пользователя.",
+            "type": "number"
+        },
+        "avatar_image": {
+            "description": "Аватар пользователя",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "$ref": "#/definitions/image"
+                }
+            ]
+        },
+        "name": {
+            "description": "Имя",
+            "type": "string"
+        },
+        "phone": {
+            "description": "Телефон. Берется из юзера. Зависит от настроек видимости телефона.",
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "created_at": {
+            "description": "Дата создания профиля",
+            "type": "string"
+        },
+        "description": {
+            "description": "Описание профиля. Произвольное текстовое описание",
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "birthday": {
+            "description": "Дата рождения. Пример, '1982-09-25'",
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "gender": {
+            "description": "Пол",
+            "enum": {
+                "female": "female",
+                "male": "male"
+            },
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "email": {
+            "description": "Email",
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "hash": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "id",
+        "circle_id",
+        "user_id",
+        "avatar_image",
+        "background_image",
+        "name",
+        "visible_name",
+        "phone",
+        "place_count",
+        "friend_count",
+        "push_in_lobby",
+        "send_push_in_lobby",
+        "common_friend_count",
+        "common_circle_count",
+        "is_global_profile",
+        "last_activity",
+        "is_active",
+        "distance",
+        "lon",
+        "lat",
+        "status",
+        "post_count",
+        "from_contact_book",
+        "badge_ids",
+        "has_dialog_with_visitor",
+        "visitor_dialog_id",
+        "invite_time",
+        "visibility",
+        "is_admin",
+        "outcast",
+        "image_count",
+        "created_at",
+        "site",
+        "description",
+        "public_profile_count",
+        "banned_user_count",
+        "is_visible_geo_position",
+        "birthday",
+        "gender",
+        "city",
+        "country",
+        "email",
+        "hash"
+    ],
+    "additionalProperties": false
+}

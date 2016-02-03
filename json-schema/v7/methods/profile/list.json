@@ -1,0 +1,47 @@
+{
+  "title": "Profile list",
+  "description": "Return all profiles",
+  "request": {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+
+      "ids": {
+        "description": "Profiles id separated by comma",
+        "type": "string"
+      }
+    },
+    "required": [
+
+      "ids"
+    ],
+    "additionalProperties": false
+  },
+  "response": {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "result": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/profile"
+            }
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "meta": {
+        "$ref": "#/definitions/meta"
+      }
+    },
+    "required": [
+      "result",
+      "meta"
+    ]
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "title": "Profile edit",
+  "request": {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "id": {
+        "meta": {
+          "restrictions": "The observer must be the owner of the profile"
+        },
+        "description": "Profile id",
+        "type": "number"
+      },
+      "name": {
+        "description": "Profile name",
+        "type": "string"
+      },
+      "avatar": {
+        "description": "image url",
+        "type": "string"
+      },
+      "description": {
+        "description": "Profile description",
+        "type": "string"
+      },
+      "created_at": {
+        "description": "Date",
+        "type": "string"
+      }
+    },
+    "required": [
+      "id"
+    ],
+    "additionalProperties": false
+  },
+  "response": {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "result": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {"$ref": "#/definitions/profile"}
+              ]
+            }
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "meta": {
+        "$ref": "#/definitions/meta"
+      }
+    },
+    "required": [
+      "result",
+      "meta"
+    ]
+  }
+}

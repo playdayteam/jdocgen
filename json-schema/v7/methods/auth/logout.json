@@ -1,0 +1,21 @@
+{
+  "title": "Logout",
+  "description": "Exit from app and delete apikey",
+  "request": {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "method": "POST",
+    "type": "null"
+  },
+  "response": {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "meta": {
+        "$ref": "#/definitions/meta"
+      }
+    },
+    "required": [
+      "meta"
+    ]
+  }
+}

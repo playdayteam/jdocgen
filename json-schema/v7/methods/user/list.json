@@ -1,0 +1,48 @@
+{
+  "title": "User list",
+  "request": {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "name": {
+        "description": "Поисковый фильтр по имени юзера",
+        "type": "string"
+      },
+      "limit": {
+        "description": "По умолчанию - 1000",
+        "type": "number"
+      }
+    },
+    "required": [
+      "apikey"
+    ],
+    "additionalProperties": false
+  },
+  "response": {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "result": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/user"
+            }
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "meta": {
+        "$ref": "#/definitions/meta"
+      }
+    },
+    "required": [
+      "result",
+      "meta"
+    ]
+  }
+}

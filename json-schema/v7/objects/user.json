@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "user",
+    "type": "object",
+    "properties": {
+        "id": {
+            "description": "ID",
+            "type": "string"
+        },
+        "profiles": {
+            "is_relation": 1,
+            "description": "Профили юзера. Только профили в открытых кругах. И активные и деактивированные.\n                    Сортировка своих профилей по id. Сортировка чужих - по кол-ву профилей в комнатах.",
+            "type": "array",
+            "items": {
+                "oneOf": [
+                    {
+                        "$ref": "#/definitions/profile"
+                    }
+                ]
+            }
+        },
+        "hash": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "id",
+        "global_profile_id",
+        "hash"
+    ],
+    "additionalProperties": false
+}

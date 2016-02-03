@@ -1,0 +1,49 @@
+{
+  "title": "Get user",
+  "request": {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+
+      "id": {
+        "meta": {
+          "restrictions": "Фильтр по блеклисту"
+        },
+        "description": "ID юзера",
+        "type": "string"
+      }
+    },
+    "required": [
+
+      "id"
+    ],
+    "additionalProperties": false
+  },
+  "response": {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "result": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/user"
+            }
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "meta": {
+        "$ref": "#/definitions/meta"
+      }
+    },
+    "required": [
+      "result",
+      "meta"
+    ]
+  }
+}

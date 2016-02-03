@@ -1,0 +1,53 @@
+{
+    "title": "Add profile",
+    "description": "Визитор не должен состоять в круге и не быть оотуда изгнанным. Деактивированный профиль в круге активируется.",
+    "request": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {
+            "name": {
+                "description": "Имя профиля для отображения в конкретном кргу (никнейм), если не указано - имя пользователя",
+                "type": "string"
+            },
+            "avatar": {
+                "description": "Name картинки для аватара",
+                "type": "string"
+            },
+            "description": {
+                "description": "Текстовое описание. Максимальная длина 500 символов.",
+                "type": "string"
+            }
+        },
+        "required": [
+            "apikey"
+        ],
+        "additionalProperties": false
+    },
+    "response": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {
+            "result": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/definitions/profile"
+                        }
+                    }
+                },
+                "required": [
+                    "data"
+                ]
+            },
+            "meta": {
+                "$ref": "#/definitions/meta"
+            }
+        },
+        "required": [
+            "result",
+            "meta"
+        ]
+    }
+}

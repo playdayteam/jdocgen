@@ -1,0 +1,49 @@
+{
+  "title": "Get profile",
+  "request": {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "id": {
+        "meta": {
+          "restrictions": "Фильтр по блеклисту."
+        },
+        "description": "ID профиля",
+        "type": "number"
+      }
+    },
+    "required": [
+      "id"
+    ],
+    "additionalProperties": false
+  },
+  "response": {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "result": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {"$ref": "#/definitions/profile"}
+              ]
+            }
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "meta": {
+        "$ref": "#/definitions/meta"
+      }
+    },
+    "required": [
+      "result",
+      "meta"
+    ]
+  }
+}

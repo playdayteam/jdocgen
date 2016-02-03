@@ -1,0 +1,64 @@
+{
+  "title": "Login",
+  "request": {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "method": "POST",
+    "properties": {
+      "phone": {
+        "description": "Phone",
+        "type": "string"
+      },
+      "name": {
+        "description": "Name",
+        "type": "string"
+      },
+      "avatar": {
+        "description": "Avatar for global profile",
+        "type": "string"
+      }
+    },
+    "required": [
+      "phone",
+      "name"
+    ]
+  },
+  "response": {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "meta": {
+        "$ref": "#/definitions/meta"
+      },
+      "result": {
+        "type": "object",
+        "properties": {
+          "general": {
+            "type": "object",
+            "properties": {
+              "apikey": {
+                "type": "string"
+              }
+            },
+            "required": [
+            ]
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/user"
+            }
+          }
+        },
+        "required": [
+          "general",
+          "data"
+        ]
+      }
+    },
+    "required": [
+      "result",
+      "meta"
+    ]
+  }
+}

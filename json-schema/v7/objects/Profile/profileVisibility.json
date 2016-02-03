@@ -1,0 +1,98 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "profileVisibility",
+    "type": "object",
+    "properties": {
+        "birthday": {
+            "description": "Show birthday",
+            "meta": {
+                "enum": {
+                    "me": "for me",
+                    "friends": "for friends",
+                    "all": "for all"
+                }
+            },
+            "enum": [
+                "me",
+                "friends",
+                "all"
+            ],
+            "type": "string"
+        },
+        "friend_count": {
+            "description": "Show friends",
+            "meta": {
+                "enum": {
+                    "me": "for me",
+                    "friends": "for friends",
+                    "all": "for all"
+                }
+            },
+            "enum": [
+                "me",
+                "friends",
+                "all"
+            ],
+            "type": "string"
+        },
+        "place_count": {
+            "description": "Show places",
+            "meta": {
+                "enum": {
+                    "me": "for me",
+                    "friends": "for friends",
+                    "all": "for all"
+                }
+            },
+            "enum": [
+                "me",
+                "friends",
+                "all"
+            ],
+            "type": "string"
+        },
+        "phone": {
+            "description": "Show phone",
+            "meta": {
+                "enum": {
+                    "me": "for me",
+                    "friends": "for friends",
+                    "all": "for all"
+                }
+            },
+            "enum": [
+                "me",
+                "friends",
+                "all"
+            ],
+            "type": "string"
+        },
+        "posts": {
+            "description": "Show posts",
+            "meta": {
+                "enum": {
+                    "me": "for me",
+                    "friends": "for friends",
+                    "all": "for all"
+                }
+            },
+            "enum": [
+                "me",
+                "friends",
+                "all"
+            ],
+            "type": "string"
+        }
+    },
+    "required": [
+        "birthday",
+        "friend_count",
+        "place_count",
+        "phone",
+        "posts"
+    ],
+    "additionalProperties": false,
+    "meta": {
+        "parent": "profile"
+    }
+}

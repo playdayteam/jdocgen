@@ -1,0 +1,36 @@
+{
+  "title": "Delete user",
+  "description":"Метод возвращает либо ничего, либо отладочную информацию. HTTP-код 200 подтверждает, что все хорошо.",
+  "request": {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+
+      "id": {
+        "description": "ID юзера для удаления. Только наблюдатель",
+        "type": "string"
+      },
+      "secret_key": {
+        "description": "Секретный ключ для возможности удаления",
+        "type": "string"
+      }
+    },
+    "required": [
+
+      "id"
+    ],
+    "additionalProperties": false
+  },
+  "response": {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "meta": {
+        "$ref": "#/definitions/meta"
+      }
+    },
+    "required": [
+      "meta"
+    ]
+  }
+}

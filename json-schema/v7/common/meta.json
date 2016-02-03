@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "meta",
+  "description": "Для тела response",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "string"
+    }
+  },
+  "required": ["code"]
+}
